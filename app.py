@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
-API_KEY_GEMINI = os.environ.get("GEMINI_API_KEY", "")
+API_KEY_GEMINI = "AIzaSyDcUVVpt4d_xqHuQQsAZrVPLognTnQKDSs"
 GEMINI_MODEL = "gemini-2.5-flash"
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
@@ -40,7 +40,7 @@ def gemini_translate_to_genz(text):
     
     headers = {
         "Content-Type": "application/json",
-        "x-goog-api-key": "AIzaSyDD1gvkrWn4m8e1MDlWXBtQrv8583mOSJc"
+        "x-goog-api-key": "AIzaSyDcUVVpt4d_xqHuQQsAZrVPLognTnQKDSs"
     }
     payload = {
         "contents": [
