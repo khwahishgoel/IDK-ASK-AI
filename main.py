@@ -7,9 +7,10 @@ from tkinter import filedialog
 from tts import elevenlabs_tts_full
 
 # ===================== CONFIG =====================
-API_KEY_GEMINI = "AIzaSyBp3i4bca-fNa_Cktn7LgiS9cY6Spk8y-Q"
-GEMINI_MODEL = "gemini-2.5-flash"  # Replace with your model
+API_KEY_GEMINI = os.getenv("API_KEY_GEMINI")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL")
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+
 
 CHUNK_SIZE = 1000  # Smaller chunks to prevent API issues
 
