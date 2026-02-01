@@ -4,9 +4,17 @@ import requests
 import json
 import tkinter as tk
 from tkinter import filedialog
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ===================== CONFIG =====================
-API_KEY = "add ur key here"
+API_KEY="AIzaSyDcUVVpt4d_xqHuQQsAZrVPLognTnQKDSs"
+
+"""if not API_KEY:
+    raise ValueError("⚠️ Gemini API key not found! Check your .env file.")"""
+
+
 
 # Replace this with a model from your ListModels output that supports "generateContent"
 GEMINI_MODEL = "gemini-2.5-flash"
@@ -96,6 +104,9 @@ def select_file():
     return file_path
 
 def main():
+    if not API_KEY:
+        raise ValueError("⚠️ Gemini API key not found! Check your .env file.")
+
     print("Select a student notes PDF to convert...")
     pdf_path = select_file()
     if not pdf_path:
