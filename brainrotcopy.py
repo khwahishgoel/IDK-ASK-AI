@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ===================== CONFIG =====================
-API_KEY="AIzaSyDcUVVpt4d_xqHuQQsAZrVPLognTnQKDSs"
+API_KEY=os.getenv("GEMINI_API_KEY")
 
-"""if not API_KEY:
-    raise ValueError("⚠️ Gemini API key not found! Check your .env file.")"""
+if not API_KEY:
+    raise ValueError("⚠️ Gemini API key not found! Check your .env file.")
 
 
 
