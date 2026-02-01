@@ -15,7 +15,7 @@ GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_M
 CHUNK_SIZE = 1000  # Smaller chunks to prevent API issues
 
 API_KEY_11LABS = "sk_0249bae0ca69ff3a1befe4725be51b0485c64594a197ec77"
-VOICE_ID = "EXAVITQu4vr4xnSDxMaL"  # Default voice, can replace
+VOICE_ID = "ur key"  # Default voice, can replace
 # ==================================================
 
 # ---------------- PDF TEXT EXTRACTION ----------------

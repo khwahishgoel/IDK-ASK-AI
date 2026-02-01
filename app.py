@@ -1,9 +1,11 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify, send_file
 from werkzeug.utils import secure_filename
 import PyPDF2
 import requests
 
+load_dotenv()
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -38,7 +40,7 @@ def gemini_translate_to_genz(text):
     
     headers = {
         "Content-Type": "application/json",
-        "x-goog-api-key": API_KEY_GEMINI
+        "x-goog-api-key": "AIzaSyDD1gvkrWn4m8e1MDlWXBtQrv8583mOSJc"
     }
     payload = {
         "contents": [
@@ -106,4 +108,4 @@ def health():
     return jsonify({'status': 'vibing', 'api_configured': bool(API_KEY_GEMINI)})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=5005, debug=False)

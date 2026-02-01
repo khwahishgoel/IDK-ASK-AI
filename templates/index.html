@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDK, ASK AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .wavy-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+        .main-content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .corner-star {
+            position: absolute;
+            width: 90px;
+            height: 45px;
+        }
+        .corner-star.tl { top: 20px; left: 20px; }
+        .corner-star.tr { top: 20px; right: 20px; }
+        .corner-star.bl { bottom: 20px; left: 20px; }
+        .corner-star.br { bottom: 20px; right: 20px; }
+        .header-title {
+            position: absolute;
+            top: 40px;
+            left: 0; right: 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        .warp-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 4vw;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #111;
+            transform: skew(-10deg, -2deg) rotate(-8deg);
+            letter-spacing: 2px;
+        }
+        .smiley-upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0 40px 0;
+            cursor: pointer;
+        }
+        .smiley-svg {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+        }
+        .smiley-upload:hover .smiley-svg {
+            transform: scale(1.07) rotate(-5deg);
+        }
+        .upload-label {
+            font-size: 1.1rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .make-btn {
+            background: #ffe066;
+            color: #222;
+            border: none;
+            border-radius: 30px;
+            padding: 20px 60px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .make-btn:active {
+            background: #ffd700;
+            transform: scale(0.97);
+        }
+        @media (max-width: 600px) {
+            .warp-text { font-size: 2rem; }
+            .smiley-svg { width: 120px; height: 120px; }
+            .make-btn { padding: 15px 30px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <svg class="wavy-bg" width="100%" height="100%" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+            <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#bbb" stroke-width="1"/>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+    </svg>
+    <div class="main-content">
+        <svg class="corner-star tl corner-star-svg" viewBox="0 0 60 30"><ellipse cx="30" cy="15" rx="28" ry="13" fill="none" stroke="#111" stroke-width="2"/><text x="30" y="20" text-anchor="middle" font-size="20" font-family="Arial">✧✧</text></svg>
+        <svg class="corner-star tr corner-star-svg" viewBox="0 0 60 30"><ellipse cx="30" cy="15" rx="28" ry="13" fill="none" stroke="#111" stroke-width="2"/><text x="30" y="20" text-anchor="middle" font-size="20" font-family="Arial">✧✧</text></svg>
+        <svg class="corner-star bl corner-star-svg" viewBox="0 0 60 30"><ellipse cx="30" cy="15" rx="28" ry="13" fill="none" stroke="#111" stroke-width="2"/><text x="30" y="20" text-anchor="middle" font-size="20" font-family="Arial">✧✧</text></svg>
+        <svg class="corner-star br corner-star-svg" viewBox="0 0 60 30"><ellipse cx="30" cy="15" rx="28" ry="13" fill="none" stroke="#111" stroke-width="2"/><text x="30" y="20" text-anchor="middle" font-size="20" font-family="Arial">✧✧</text></svg>
+        <div class="header-title">IDK, ASK AI</div>
+        <div class="warp-text" style="margin-top: 90px;">How Can I</div>
+        <div class="smiley-upload" id="smileyUpload">
+            <svg class="smiley-svg" viewBox="0 0 200 200">
+                <ellipse cx="100" cy="100" rx="90" ry="90" fill="#fff" stroke="#111" stroke-width="4"/>
+                <ellipse cx="70" cy="90" rx="13" ry="18" fill="#111"/>
+                <ellipse cx="130" cy="90" rx="13" ry="18" fill="#111"/>
+                <path d="M 60 130 Q 100 170 140 130" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div class="upload-label">Click to upload</div>
+            <input type="file" id="fileInput" accept=".pdf" hidden>
+        </div>
+        <div class="warp-text" style="margin-bottom: 30px;">Rizz you today</div>
+        <button class="make-btn" id="convertBtn" disabled>MAKE IT BRAINROT</button>
+        <div class="file-info" id="fileInfo" style="display: none; margin-top: 20px;">
+            <span class="file-name" id="fileName"></span>
+            <button class="remove-btn" id="removeFile">&#x2715;</button>
+        </div>
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>cooking up something fire...</p>
+        </div>
+        <div class="results" id="results" style="display: none;">
+            <h2 class="results-title">&#x1F525; the vibes are immaculate &#x1F525;</h2>
+            <div class="result-card">
+                <div class="result-header">
+                    <span>&#x1F4DD; converted notes</span>
+                    <button class="copy-btn" id="copyBtn">copy &#x1F4CB;</button>
+                </div>
+                <div class="result-content" id="convertedText"></div>
+            </div>
+        </div>
+        <div class="error-msg" id="errorMsg" style="display: none;"></div>
+    </div>
+    <script>
+    // Make smiley and label trigger file input
+    document.getElementById('smileyUpload').onclick = function() {
+        document.getElementById('fileInput').click();
+    };
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
