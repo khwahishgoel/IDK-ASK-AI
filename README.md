@@ -1,4 +1,4 @@
-# IDK-ASUseK-AI
+# IDK-ASK-AI
 
 # Brainrot — Simple local README
 
