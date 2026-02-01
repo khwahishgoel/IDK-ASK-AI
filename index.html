@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Z Notes Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="title">
+                <span class="emoji">&#x1F9E0;</span>
+                Gen Z Notes
+                <span class="emoji">&#x2728;</span>
+            </h1>
+            <p class="subtitle">turn ur boring notes into absolute brainrot bestie</p>
+        </header>
+
+        <div class="upload-zone" id="dropZone">
+            <div class="upload-content">
+                <div class="upload-icon">&#x1F4C4;</div>
+                <p class="upload-text">drop ur PDF here</p>
+            </div>
+            <input type="file" id="fileInput" accept=".pdf" hidden>
+        </div>
+
+        <div class="file-info" id="fileInfo" style="display: none;">
+            <span class="file-name" id="fileName"></span>
+            <button class="remove-btn" id="removeFile">&#x2715;</button>
+        </div>
+
+        <button class="convert-btn" id="convertBtn" disabled>
+            <span class="btn-text">make it brainrot</span>
+            <span class="btn-icon">&#x1F680;</span>
+        </button>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>cooking up something fire...</p>
+        </div>
+
+        <div class="results" id="results" style="display: none;">
+            <h2 class="results-title">&#x1F525; the vibes are immaculate &#x1F525;</h2>
+            <div class="result-card">
+                <div class="result-header">
+                    <span>&#x1F4DD; converted notes</span>
+                    <button class="copy-btn" id="copyBtn">copy &#x1F4CB;</button>
+                </div>
+                <div class="result-content" id="convertedText"></div>
+            </div>
+        </div>
+
+        <div class="error-msg" id="errorMsg" style="display: none;"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
