@@ -13,7 +13,9 @@ Quick setup (local)
 	pip install -r requirements.txt
 
 3. Run the app (example):
-	python app.py
+	python/python3 app.py
+4. If you want to just run the backend:
+   python/python3 brainrot.py
 
 Config and secrets
 - The project expects the GEMINI_API_KEY to be provided as an environment variable.
