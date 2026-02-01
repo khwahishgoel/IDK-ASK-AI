@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 # ===================== CONFIG =====================
-API_KEY = "AIzaSyBqyQWZY0b8ktc-bCFt02gMxPB4l6xHteQ"
+API_KEY = "gemini api key"
 
 # Replace this with a model from your ListModels output that supports "generateContent"
 GEMINI_MODEL = "gemini-2.5-flash"
