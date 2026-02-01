@@ -1,0 +1,357 @@
+Okay, bet! Here's that syllabus, but make it Gen Z brainrot:
+
+---
+
+**CICS 210-02: Data Structures. The Class That Slaps. V6 Edition.**
+*Last updated 09/06/2025, 'cause even Prof MJ Golin needs a glow-up for CICS Fall 2025.*
+**PSA:** V6 fixed a *tiny* typo on pp 41-44 from V5. Crisis averted, we move. ✌️
+
+---
+
+**2. The Short Outline (aka The Vibe Check for the Semester)**
+*   A lil' bit of admin, you know the drill. 🙄
+*   Unlocking the basic memory model secrets. 🧠
+*   Getting cozy with primitive data types.
+*   References, 'cause that's how we link up. 🔗
+*   Swapping variables like it's a TikTok dance challenge.
+*   Arrays, the OG data structure.
+*   And yeah, more admin. Lame but necessary. 😩
+
+---
+
+**3. What Even IS This Class, Fam?**
+Okay, so this class is your main character moment for designing, analyzing, and actually *making* data structures. You're gonna learn how to build, test, debug (the real struggle, IYKYK), document, and evaluate your code. Basically, you'll be creating these fire objects that encapsulate data and their operations, using all the modern programming language flexes. 🔥
+
+We're diving deep into the sauce: linear/non-linear structures (think lists vs. trees, no cap), recursion that'll make your brain do a double-take (but in a good way!), traversal algorithms, binary search trees (BSTs, for the real ones), balanced trees (no more lopsided data structures here!), priority queues (it's giving VIP lane for your data), union-find, hash tables (where everything has a spot, literally), Bloom filters (it's giving magic), and graphs (connecting the dots, we love to see it). 💫
+
+Plus, we're gonna informally compare how fast different algorithms run, peep their performance characteristics, and hit 'em with the worst-case running time analysis. We'll classify algorithms like 'constant,' 'logarithmic,' 'linear,' 'log linear,' 'quadratic,' and 'exponential' using Big-O notation, 'cause nobody got time for slow code, periodt. 💅
+
+**Prerequisites:** You gotta have CICS 160 or INFO 190T with a C or better. Don't come in here not knowing your stuff, respectfully. 🚫
+
+---
+
+**4. Tentative Semester Schedule (aka The Agenda, but it's giving flexibility 💅)**
+1.  **Intro to Data Structures & Algorithms** (Java review, 'cause we all need a refresher, bestie)
+2.  **Object Orientation; Java Dev** (IDEs, testing – make sure that code *slaps*)
+3.  **Linear Structures Review** (arrays, Array Lists, Linked Lists – the OGs)
+4.  **Iteration/Traversal** (how to vibe through your data)
+5.  **Big-O Analysis, Amortization** (don't let your code be slow-mo 🐌)
+6.  **Generics, Recursion Review** (your brain might do a lil loop-de-loop 😵‍💫)
+7.  **Maps, Hash Tables** (finding stuff fast, it's giving efficient)
+8.  **Trees** (binary search trees, it's giving data hierarchy)
+9.  **Balanced Trees** (AVL and B-trees, no lopsided data structures here)
+10. **Priority Queues** (heaps and treaps) / **Heapsort** (VIP lane for your data)
+11. **Sorting and Selection** (making chaos organized ✨)
+12. **Graphs** (representation; BFS and DFS search algorithms – connecting the dots)
+13. **Advanced Structures:** Union-Find, Bloom filters, Tries (the really spicy stuff 🌶️)
+14. **FINAL EXAM** (The final boss battle, good luck, bestie 🫡)
+
+**A Few More Things, No Cap:**
+*   First two weeks are literally just a quick Java glow-up. We know you forgot. 💁‍♀️
+*   After week 2-3, most of this wisdom is language-agnostic. It's a universal slay. 🌍
+*   This ain't just a Java fan page, okay? We use it, but it's not the main character. 🎬
+*   The code examples are just there to help you grasp the *big brain* data structure concepts, not to be your personal Java tutor. You should already be somewhat fluent, respectfully. 🙏
+
+Okay bestie, gather round, it's time for the admin tea, Gen Z edition. Let's get into it! 💅✨
+
+---
+
+**Java Code & Course Vibes Check:**
+
+So like, sometimes our Java code might be a bit... unhinged. It won't always be giving "best practices" energy, no cap. Also, the topic order? It's tentative, so the vibes might shift. Don't get too attached! And Topic 13 (Advanced Structures) is on a "maybe" list; we'll teach it if the universe aligns and we have time for that glow-up. 🤷‍♀️
+
+---
+
+**Admin Stuff Pt. 1: The Juicy Deets ☕**
+
+**Lectures are happening:**
+*   **Lec 01:** TuTh, 8:30 – 9:45 AM, Morrill Sci Ctr (1), Room N375 (Peep the room number, don't be late! 👀)
+*   **Lec 02:** MoWe, 8:30 – 9:45 AM, Goessmann Lab. Add rm 64
+
+**Labs** are a Monday thing. Check SPIRE for your specific time and location – that's your main character for lab info. Don't be a clown and miss it, fr fr.
+
+**Meet your profs, they're not ops, promise:**
+*   **Lec 01: Marc Liberatore**
+    *   Email: liberato@cs.umass.edu
+    *   Office: Computer Science, Room 318
+    *   Office hours: TBA (manifesting they drop soon 🙏)
+*   **Lec 02: Mordecai Golin**
+    *   Email: mgolin@cs.umass.edu
+    *   Office: LGRC, Room A143
+    *   Office hours: TBA (still manifesting those times 🙏)
+
+No diff between sections, it's giving "same same but different," but like, actually same. All the juicy stuff (readings, quizzes, labs, midterms) will be shared. Only exception is that final exams might be on different days, so plan your mental breakdowns accordingly. 🗓️
+
+**Teaching styles:** Marc's out here live-coding, channeling his inner Twitch streamer. Mordecai's more of a slide-master. Both valid kings! We get that everyone learns differently, no judgment! If the other prof's vibe hits better for you, pull up to their lecture, no cap. Do what you gotta do to secure the A. ✨
+
+---
+
+**More Admin Tea ☕ (still Pt. 1, it's a lot, okay?)**
+
+*   **Canvas** is your new main squeeze for all the course material. It's giving "everything you need in one place" vibes. Syllabus (READ IT, don't be that person), assignments, slides, Java code, all that jazz.
+*   The Canvas page is live, but it's still in its "glow-up" era. Might change a lil over the next few weeks, so check back for updates.
+*   **Gradescope** is where your assignments and quizzes/exams will get their grade glow-up (or L, depending on you). Get familiar.
+*   **Piazza** is for your questions. Don't be shy, ask away. No sus questions tho, pls.
+*   Instructor & TA office hours are coming to Canvas soon; manifesting those times for your struggling moments. 🤞
+
+---
+
+**Even More Admin Tea ☕ (seriously, so much tea)**
+
+**No required textbook? Slay!** No cap, it's not required. The syllabus has like, a whole mood board of references if you're feeling extra. But for real, it's not a must-have. Some topics are vibing with this one book: *Data Structures and Algorithms in Java, 6th ed* by Goodrich, Tamassia, and Goldwasser. You can buy it, hard or soft copy. BUT, and this is a big BUT, it's **NOT** a must-have. All the tea you need is in the slides, IYKYK. 📖❌
+
+---
+
+**Your Weekly Vibe Check 🗓️**
+
+**Pro-tip:** Don't show up clueless. Peep the slides/notes BEFORE class. It's giving "prepared main character" energy and will save you from an L.
+
+*   **Lectures:**
+    *   Section 2: Monday/Wednesday
+    *   Section 1: Tuesday/Thursday
+*   **Monday Lab:** Could be an activity, could be a pop quiz that makes you wanna cry. It's a mystery box every week, good luck bestie. 🎲😭
+
+Alright besties, listen up! 🤪 Here's the tea on what's dropping:
+
+**Quizzes & Vibes:**
+*   **5 quizzes incoming, no cap!** 🚨 Check the syllabus for the drop dates – don't be sleeping.
+*   Plus, there's an **assignment low-key lurking** for us to get our grind on. 💅
+
+**Agenda for the Brainrot Incoming:**
+*   A quick outline for today:
+    *   Some administrative jumpscares 😬
+    *   Intro to the **basic memory model** (get ready to level up your brain cells)
+    *   **Primitive data types** (they're not that basic, js)
+    *   **References** (aka pointers, they're the main characters later)
+    *   **Swapping variables** (it's giving ✨magic✨)
+    *   **Arrays** (our collective struggle bus)
+    *   And, of course, **more administrative jumpscares** 🫠
+
+---
+
+**Memory Model: What's the GB, fr?**
+Okay, so this course? It's making us understand the *deep lore* of how computers actually store stuff, way more than before. My MacBook's out here flexing with "32GB available" but my brain is like, "??? what's the tea?" 🍵
+
+Here's the glow-up on storage units, IYKYK:
+*   The **basic unit is a bit** (it's either a 0 or a 1, period.)
+*   **A byte is 8 bits** (think of it as a small squad)
+*   **Kilobyte (KB)** is approx. 1000 bytes (cute, but small)
+*   **Megabyte (MB)** is 2^20 bytes (we're getting somewhere)
+*   **Gigabyte (GB)** is 2^30 bytes (this is where your games live)
+*   **Terabyte (TB)** is 2^40 bytes (we're rich in storage, hunny)
+
+And for our fave primitive data types:
+*   An `int` uses **4 bytes**
+*   A `float` uses **4 bytes** (they're twinsies)
+*   A `long` uses **8 bytes** (it's extra)
+*   A `char` uses **2 bytes** (just a smol boi)
+
+---
+
+**Memory Model (Simplified, but make it make sense):**
+POV: your computer's memory is a never-ending TikTok scroll of consecutively numbered (addressed) bytes.
+```
+0 | 1 | 2 | 3 | 4 | ... | 2^32-1 | 2^32-2 | 2^32-3
+```
+Every single byte has its own address, like a unique user ID. It starts at `0` and goes all the way up to the largest address it can handle (if you got 4GB, it ends at `4 * 2^30 - 1`).
+
+Before this course, it was giving "ignorance is bliss" and you low-key didn't need to know how this works. But now? We gotta understand the *how* for the real glow-up: **reference variables** (aka pointers, they're the main characters for data structures, fr fr). Every piece of data gets its own little apartment complex, rent-free, in a contiguous block of memory.
+
+---
+
+**Memory Model (Variables and Allocation - it's giving storage):**
+```
+0 | 1 | 2 | 3 | 4 | ...
+  |   |   |   |   |
+  +---+---+---+---+
+  |   n (int)     |
+  +---+---+---+---+
+      |   c (char)  |
+      +---+---+-----+
+```
+When you pull up with `int n;` the computer's like, "Bet, allocating 4 bytes right here for this integer's value, no questions asked." 🫡
+
+Same energy for `char c;` – "Okay, 2 bytes for this character's value, you got it."
+
+But you, as the programmer? You have no idea what the *exact* addresses of those memory locations are. It's giving top-secret government intel. 🤫
+
+---
+
+**Memory Model (Primitive Data Types - the takeaway):**
+Basically, for our primitive data types, when you name a variable of a specific type, the computer automatically reserves that prime real estate space to hold whatever value you assign to it. It's giving storage, it's giving commitment. ✨
+
+Okay, besties, gather 'round, 'cause we're about to decode this tech jargon using 💯 pure Gen Z brainrot. Your brain cells might melt, but you'll get it. No cap.
+
+---
+
+**POV:** You're tryna understand variables but your brain is already smooth.
+
+**So, like, what's the tea?**
+*   **Variable:** It's the *memory slot*, the *container*, the *box*. Like your phone's storage, but for tiny bits of info.
+*   **Value:** It's the *actual stuff* inside that box. The data, the number, the vibe.
+
+---
+
+**Slide 14: Primitive Data Types (The Basic Baddies)**
+
+**Imagine this chaotic sequence of commands:**
+
+1.  `int i;`
+2.  `int j;`
+3.  `i = 12;`
+4.  `j = 15;`
+
+**What's happening?**
+Okay, so lines 1 & 2? We're basically telling the computer, "Hey bestie, manifest two separate memory blocks for two simple integer variables, `i` and `j`." Each gets its own little four-byte apartment, rent-free.
+
+*   Line 3 is like, "Aight, let's *yeet* the value 12 directly into `i`'s apartment."
+*   Line 4? "And we're gonna *dump* 15 straight into `j`'s apartment."
+
+So now, you have two individual memory spots, each chilling with its own number. It's giving separate but equal.
+**`i`: [12]**
+**`j`: [15]**
+
+**Memory Model (Primitive Data Types):** It's giving individual containers, no sharing! 💅
+
+---
+
+**Slide 15: Primitive Data Types (Copy-Paste Vibe)**
+
+**How about this sequence?**
+
+1.  `int i;`
+2.  `int j;`
+3.  `i = 12;`
+4.  `j = i;`
+
+**What's happening?**
+Again, lines 1 & 2 are just reserving those two separate 4-byte spots for `i` and `j`. Standard stuff.
+
+*   Line 3: Still putting 12 into `i`'s spot. Easy.
+*   Line 4: This is where it gets spicy. `j = i;` isn't making them the same entity. It's saying, "Go look up what value `i` has (it's 12), and then *make a copy* of that 12 and store it in *j's own spot*."
+
+So now both `i` and `j` have 12, but they're still two *separate* 12s in two *separate* memory spots. If `i` later changes its value to 20, `j` will still be chilling with its 12. They're independent queens!
+**`i`: [12]**
+**`j`: [12]**
+
+**Memory Model (Primitive Data Types):** It's giving mirror image, but not twins! ✨
+
+---
+
+**Slide 16: Primitive Data Types (Brainpower Activated)**
+
+**How about this sequence?**
+
+1.  `int i;`
+2.  `int j;`
+3.  `i = 12;`
+4.  `j = 3 * i;`
+
+**What's happening?**
+Lines 1 & 2: You know the drill, two 4-byte memory slots manifested.
+
+*   Line 3: 12 goes into `i`'s spot. Our girl `i` is still 12.
+*   Line 4: Okay, the CPU is now doing its main character thing. It's like, "Hold up, let me compute!"
+    *   It grabs `i`'s value (12).
+    *   It does the math: 12 * 3 = 36.
+    *   Then, it *slaps that resulting value* (36) into `j`'s memory spot.
+
+So `i` is still 12, but `j` just leveled up with the calculated value.
+**`i`: [12]**
+**`j`: [36]**
+
+**Memory Model (Primitive Data Types):** It's giving CPU working overtime for the girlies! 💅🧠
+
+---
+
+**Slide 17: Short Outline (The Agenda, Bestie)**
+
+Okay, quick agenda for the day, before we completely lose our minds:
+*   **Some administration:** (Skip, we're here for the fun stuff)
+*   **Intro to the basic memory model:** (We just did that, slay!)
+*   **Primitive data types:** (Those simple value-holding girlies)
+*   **References:** (The ✨spicy✨ ones that hold *addresses*, not values directly)
+*   **Swapping variables:** (It's not cheating, it's efficient!)
+*   **Arrays:** (The squad goals of variables)
+*   **More administrative Stuff:** (Seriously, why?!)
+
+---
+
+**Slide 18 & 19: Memory Model (References - The Address-Holding Girlies)**
+
+**Imagine you have this blueprint, this *class*, for a `Bus`:**
+
+```java
+public class Bus {
+   int number;       // route # (like, the 420 Bus)
+   double distance;  // route length (how far it goes, like 69.42 miles)
+   public Bus(int n, double d){ // How to build a bus
+     number = n;
+     distance = d;
+   }
+}
+```
+
+**Now, what does `1. Bus b;` even *do*?**
+
+When you say `Bus b;`, you're NOT creating an actual bus. Not yet. You're just manifesting a special kind of memory slot for `b`. This slot isn't gonna hold the bus's number or distance directly. Oh no.
+
+It creates a **reference variable**. Think of `b` as a placeholder for a **Google Maps link** or a **GPS coordinate** to where an actual `Bus` object *will eventually live* somewhere else in the computer's memory (the "heap," where all the main characters hang out).
+
+So, `b` itself is just holding the *address* of a bus. It's like having someone's contact info (their "address"), but not having them physically there. `b` is basically saying, "Hey, when a `Bus` object is created, I'll know where to find it. I'm its personal locator beacon."
+
+**`b`: [ Address of Bus Object (somewhere else) ]**
+
+And the actual Bus object? When it's finally `new Bus(123, 50.5);` — that full object, with its `number` and `distance` — will live in its own big memory block, totally separate, but `b` will know exactly how to get there. It's giving "pointer energy," for real.
+
+Alright, besties, gather 'round, 'cause we're about to spill the tea on how objects actually *live* in your computer's brain. Get ready for some serious object-oriented rizz! 🧠✨
+
+---
+
+**Memory Model (References): The Digital Apartment Tour**
+
+So, imagine you've got this blueprint, right? That's your `Bus` **class**. It's just a vibe, an idea. But when you want an actual *Bus* driving around in your code, that's where the magic happens.
+
+A **Bus object**? That's when the blueprint becomes real, a whole *instance* of the `Bus` class. It's like a tiny digital apartment block chilling in your computer's memory, ready to hold its own stuff (like `number` and `distance`) and do its own actions (methods, but that's a story for another time). It's got its own little section of memory, no cap.
+
+When you type `new Bus(43, 5.5);` you're literally *manifesting* a new Bus. Poof! A fresh Bus object appears, and its deets are already set: its route `number` is **43** and its `distance` is **5.5**. Slay.
+
+And get this: `new Bus(43, 5.5)` doesn't just make it, it also immediately hands you back this secret code, this **reference 𝑿**. Think of it like a unique TikTok username or a super specific GPS coordinate for *that exact Bus object*, telling you exactly where to find it in the digital ether. It's the starting address, fam.
+
+Now, when you say `Bus b;`, you're basically saying, "I'm making space for a pointer to a Bus, maybe later." At first, `b` is just vibing, empty, set to `null` – literally pointing at nothing. It's giving "waiting for the perfect match."
+
+---
+
+**Example 1: The Glow-Up**
+
+Let's see it in action, bestie!
+
+1.  `Bus b;` // 'I'm ready for a Bus reference, whenever.' (It's `null` RN, literally no one home.)
+2.  `b = new Bus(43, 5.5);` // 'OMG, new Bus just dropped! ✨ And now, `b` is locked in, pointing straight to it like a true simp.'
+
+So, what happened? `new Bus(43, 5.5)` does its magic, whips up the new Bus object, and slaps that `𝑿` reference (the address!) on it. Then, `b` is like, "Bet!" and scoops up `𝑿`, storing it. Now, `b` literally *points* to that specific Bus instance. We even draw little arrows 'cause it's that serious. It's giving "GPS tracking the object."
+
+---
+
+**Behind the Scenes: The Real MVP (JVM)**
+
+And just FYI, there's a whole ✨ ~vibe~ ✨ happening behind the scenes that we're not even touching (that's for later, fam). The **JVM** (Java Virtual Machine) is literally out here doing the most, like a silent guardian. It's got that **automatic memory management rizz**, knowing exactly where to park your new objects in the available memory. Plus, it's the one making sure the `Bus` gets its glow-up with all the right starting values by calling the constructor. It's a whole operation, no cap. The JVM is basically your code's personal assistant, keeping everything organized and making sure your objects don't get lost in the sauce.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
